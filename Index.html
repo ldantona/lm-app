@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lastminute.com - iPhone 18 Pro Max</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Ubuntu';
+      src: url('Ubuntu-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      src: url('Ubuntu-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      src: url('Ubuntu-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'LastMinuteSans';
+      src: url('LastMinuteSans-Web.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #0f0f1a 0%, #1a1a2e 50%, #0d0d15 100%);
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  padding: 40px 20px;
+}
+
+.lastminute-sans {
+  font-family: 'LastMinuteSans', 'Ubuntu', sans-serif;
+}
+
+.iphone-frame {
+  position: relative;
+  width: 433px;
+  height: 882px;
+  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  border-radius: 62px;
+  padding: 8px;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.1),
+    0 50px 100px -20px rgba(0,0,0,0.8),
+    0 30px 60px -30px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+.iphone-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 62px;
+  padding: 1px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02), rgba(255,255,255,0.08));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.screen-bezel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 54px;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+#root > div {
+  height: 100%;
+}
+
+.button-power {
+  position: absolute;
+  right: -3px;
+  top: 180px;
+  width: 4px;
+  height: 95px;
+  background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  border-radius: 0 2px 2px 0;
+  box-shadow: inset -1px 0 1px rgba(255,255,255,0.1);
+}
+
+.button-volume-up {
+  position: absolute;
+  left: -3px;
+  top: 150px;
+  width: 4px;
+  height: 38px;
+  background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  border-radius: 2px 0 0 2px;
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.1);
+}
+
+.button-volume-down {
+  position: absolute;
+  left: -3px;
+  top: 200px;
+  width: 4px;
+  height: 38px;
+  background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  border-radius: 2px 0 0 2px;
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.1);
+}
+
+.button-action {
+  position: absolute;
+  left: -3px;
+  top: 105px;
+  width: 4px;
+  height: 32px;
+  background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  border-radius: 2px 0 0 2px;
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.1);
+}
+
+.button-camera {
+  position: absolute;
+  right: -3px;
+  top: 320px;
+  width: 4px;
+  height: 28px;
+  background: linear-gradient(90deg, #1a1a1a, #333, #1a1a1a);
+  border-radius: 0 2px 2px 0;
+  box-shadow: inset -1px 0 1px rgba(255,255,255,0.15);
+}
+
+.frame-reflection {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  width: 3px;
+  height: 200px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.08), transparent);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.ambient-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.glow-1 {
+  top: -100px;
+  left: -150px;
+  background: #4F46E5;
+}
+.glow-2 {
+  bottom: -100px;
+  right: -150px;
+  background: #EC4899;
+}
+```
+
+  </style>
+</head>
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="iphone-frame">
+    <div class="button-power"></div>
+    <div class="button-action"></div>
+    <div class="button-volume-up"></div>
+    <div class="button-volume-down"></div>
+    <div class="button-camera"></div>
+    <div class="frame-reflection"></div>
+
+```
+<div class="screen-bezel">
+  <div id="root"></div>
+</div>
+```
+
+  </div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    // SF Symbol Icon Component
+    const SFIcon = ({ type, className = "w-5 h-5", color = "currentColor" }) => {
+      const icons = {
+        'airplane': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+        ),
+        'airplane.fill': (
+          <svg className={className} fill={color} viewBox="0 0 24 24">
+            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+          </svg>
+        ),
+        'building.2': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21" />
+          </svg>
+        ),
+        'timer': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+        'calendar': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+          </svg>
+        ),
+        'mappin': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+        ),
+        'arrow.left.arrow.right': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+          </svg>
+        ),
+        'lock.fill': (
+          <svg className={className} fill={color} viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clipRule="evenodd" />
+          </svg>
+        ),
+        'person.fill': (
+          <svg className={className} fill={color} viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+          </svg>
+        ),
+        'globe': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+        ),
+        'beach.umbrella': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 3v18M12 3c-4.97 0-9 2.239-9 5h18c0-2.761-4.03-5-9-5zM8 21h8" />
+          </svg>
+        ),
+        'palm.tree': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 21v-9m0 0c-3-3-6-2-8-1m8 1c3-3 6-2 8-1M12 12c0-4 2-7 5-9m-5 9c0-4-2-7-5-9" />
+          </svg>
+        ),
+        'snowflake': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 2v20M2 12h20M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364" />
+          </svg>
+        ),
+        'percent': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M19.5 4.5l-15 15" />
+            <circle cx="7.5" cy="7.5" r="2.25" />
+            <circle cx="16.5" cy="16.5" r="2.25" />
+          </svg>
+        ),
+        'gift': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18a1.5 1.5 0 001.5-1.5v-1.5a1.5 1.5 0 00-1.5-1.5h-18a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5z" />
+          </svg>
+        ),
+        'chart.line.uptrend': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+          </svg>
+        ),
+        'star.fill': (
+          <svg className={className} fill="#EAB308" viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+          </svg>
+        ),
+        'bed.double': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M2 17v4h20v-4M2 17v-3a3 3 0 013-3h14a3 3 0 013 3v3M2 17h20M6 11V7a2 2 0 012-2h8a2 2 0 012 2v4" />
+          </svg>
+        ),
+        'email': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+        ),
+        'person': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          </svg>
+        ),
+        'people': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+          </svg>
+        ),
+        'help': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+          </svg>
+        ),
+        'doc': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+          </svg>
+        ),
+        'bell': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+        ),
+        'gear': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        ),
+        'lock': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        ),
+        'widgets': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        ),
+        'chat': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+          </svg>
+        ),
+        'accessibility': (
+          <svg className={className} fill="none" stroke={color} strokeWidth={1.5} viewBox="0 0 24 24">
+            <path d="M12 4.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM6 10.5a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H6.75A.75.75 0 016 10.5zm3 3v6.75a.75.75 0 001.5 0v-3h3v3a.75.75 0 001.5 0V13.5" />
+          </svg>
+        )
+      };
+      return icons[type] || null;
+    };
+
+    const App = () => {
+      const [activeTab, setActiveTab] = useState('explore');
+      const [activeFilter, setActiveFilter] = useState('upcoming');
+      const [searchType, setSearchType] = useState('flight-hotel');
+      const [holidayVibe, setHolidayVibe] = useState('anywhere');
+
+      const trips = [
+        {
+          id: 1,
+          destination: 'Palma de Majorca',
+          dates: '20 - 24 Nov 2025',
+          travelers: 2,
+          image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80',
+          status: 'confirmed',
+          daysUntil: 30,
+          checklist: { completed: 24, total: 100 },
+          documents: { completed: 2, total: 5 }
+        },
+        {
+          id: 2,
+          destination: 'Marrakech',
+          dates: '15 - 20 Mar 2026',
+          travelers: 2,
+          image: 'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800&q=80',
+          status: 'confirmed',
+          daysUntil: 145
+        },
+        {
+          id: 3,
+          destination: 'Maldives',
+          dates: '10 - 17 Jun 2026',
+          travelers: 2,
+          image: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80',
+          status: 'confirmed',
+          daysUntil: 220
+        }
+      ];
+
+      const mainTrip = trips[0];
+      const otherTrips = trips.slice(1);
+
+      // Explore Tab Content
+      const ExploreContent = () => (
+        <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
+          <div className="flex items-center justify-center mb-4">
+            <span className="text-[20px] font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>lastminute.com</span>
+          </div>
+
+          <div className="rounded-2xl p-1 mb-4" style={{
+            background: 'rgba(255,255,255,0.7)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.06)'
+          }}>
+            <div className="flex">
+              {[
+                { id: 'flights', label: 'Flights', icon: 'airplane' },
+                { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.fill' },
+                { id: 'hotels', label: 'Hotels', icon: 'building.2' }
+              ].map((type) => (
+                <button
+                  key={type.id}
+                  onClick={() => setSearchType(type.id)}
+                  className="flex-1 py-2.5 px-2 rounded-xl text-[12px] font-semibold transition-all duration-300 flex flex-col items-center gap-1"
+                  style={{
+                    background: searchType === type.id ? 'white' : 'transparent',
+                    color: searchType === type.id ? '#D6006E' : '#666',
+                    boxShadow: searchType === type.id ? '0 2px 8px rgba(0,0,0,0.1)' : 'none'
+                  }}
+                >
+                  <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+                  <span>{type.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 p-4 rounded-2xl mb-6" style={{
+            background: 'rgba(255,255,255,0.7)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.06)'
+          }}>
+            <div className="flex-1">
+              <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
+              <p className="text-[13px] text-gray-500">13–18 Feb · 2 travellers · 1 room</p>
+            </div>
+            <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#D6006E' }}>
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="mb-6">
+            <h2 className="text-[22px] font-bold text-gray-900 mb-1">Last Minute <span className="lastminute-sans" style={{ textDecoration: 'underline', textDecorationStyle: 'wavy', textDecorationColor: '#D6006E' }}>DEALS</span></h2>
+            <p className="text-[14px] text-gray-500 mb-4">Only here, only for a short time</p>
+            
+            <div className="rounded-[24px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.55)',
+              backdropFilter: 'blur(40px)',
+              WebkitBackdropFilter: 'blur(40px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 32px rgba(0,0,0,0.08)'
+            }}>
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80" alt="Rome" className="w-full h-full object-cover" />
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{
+                  background: 'rgba(255,255,255,0.85)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)'
+                }}>
+                  <SFIcon type="timer" className="w-4 h-4" color="#374151" />
+                  <span className="text-[12px] font-semibold text-gray-700">Ends in 6d:23h:17m</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }}>
+                  <h3 className="text-[18px] font-bold text-white mb-1">Rome, Italy</h3>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1">
+                        <SFIcon type="airplane" className="w-3.5 h-3.5" color="rgba(255,255,255,0.8)" />
+                        <span className="text-[12px] text-white/80">Flight + Hotel</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <SFIcon type="calendar" className="w-3.5 h-3.5" color="rgba(255,255,255,0.8)" />
+                        <span className="text-[12px] text-white/80">6 nights in Nov'25</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[11px] text-white/70">from </span>
+                      <span className="text-[18px] font-bold text-white">£402</span>
+                      <span className="text-[11px] text-white/70"> pp</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h2 className="text-[20px] font-bold text-gray-900 mb-1">Recommended for you</h2>
+            <p className="text-[13px] text-gray-500 mb-4">Because you searched for Barcelona</p>
+            
+            <div className="rounded-[24px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(40px)',
+              WebkitBackdropFilter: 'blur(40px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 24px rgba(0,0,0,0.08)'
+            }}>
+              <div className="relative h-36">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Hotel" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-[17px] font-bold text-gray-900 mb-1">Hotel Catalunya</h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-0.5">
+                    <SFIcon type="star.fill" className="w-3.5 h-3.5" />
+                    <SFIcon type="star.fill" className="w-3.5 h-3.5" />
+                    <SFIcon type="star.fill" className="w-3.5 h-3.5" />
+                    <SFIcon type="star.fill" className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="px-1.5 py-0.5 bg-green-600 text-white text-[11px] font-bold rounded">8.9</span>
+                  <span className="text-[12px] text-gray-500">Very Good (536 reviews)</span>
+                </div>
+                <div className="flex items-center gap-1 text-[13px] text-gray-500 mb-2">
+                  <SFIcon type="mappin" className="w-4 h-4" color="#6b7280" />
+                  <span>Barcelona · 400 m from city centre</span>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                  <div className="flex items-center gap-3 text-[12px] text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <SFIcon type="arrow.left.arrow.right" className="w-4 h-4" color="#6b7280" />
+                      <span>Return flights</span>
+                    </div>
+                    <SFIcon type="lock.fill" className="w-3.5 h-3.5" color="#6b7280" />
+                    <SFIcon type="person.fill" className="w-3.5 h-3.5" color="#6b7280" />
+                  </div>
+                </div>
+                <div className="mt-3 text-right">
+                  <span className="text-[24px] font-bold text-[#D6006E]">€443</span>
+                  <span className="text-[13px] text-gray-500">/person</span>
+                  <p className="text-[11px] text-gray-400">+€10 pp taxes/fees due later</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h2 className="text-[20px] font-bold text-gray-900 mb-1">Need some inspiration?</h2>
+            <p className="text-[13px] text-gray-500 mb-4">Choose your holiday vibe</p>
+            
+            <div className="flex gap-2 mb-4 overflow-x-auto">
+              {[
+                { id: 'anywhere', label: 'Anywhere', icon: 'globe' },
+                { id: 'beach', label: 'Beach', icon: 'beach.umbrella' },
+                { id: 'exotic', label: 'Exotic', icon: 'palm.tree' },
+                { id: 'ski', label: 'Ski', icon: 'snowflake' }
+              ].map((vibe) => (
+                <button
+                  key={vibe.id}
+                  onClick={() => setHolidayVibe(vibe.id)}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium whitespace-nowrap transition-all"
+                  style={{
+                    background: holidayVibe === vibe.id ? '#D6006E' : 'rgba(255,255,255,0.7)',
+                    color: holidayVibe === vibe.id ? 'white' : '#666',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.8), 0 2px 6px rgba(0,0,0,0.05)'
+                  }}
+                >
+                  <SFIcon type={vibe.icon} className="w-4 h-4" color={holidayVibe === vibe.id ? 'white' : '#666'} />
+                  {vibe.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex gap-4 rounded-[20px] p-3" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.06)'
+            }}>
+              <div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=400&q=80" alt="Marrakech" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-[16px] font-bold text-gray-900 mb-1">Marrakech, Marocco</h3>
+                <div className="flex items-center gap-1 text-[12px] text-gray-500 mb-0.5">
+                  <SFIcon type="calendar" className="w-3.5 h-3.5" color="#6b7280" />
+                  <span>7 nights in Feb</span>
+                </div>
+                <div className="flex items-center gap-1 text-[12px] text-gray-500 mb-0.5">
+                  <SFIcon type="bed.double" className="w-3.5 h-3.5" color="#6b7280" />
+                  <span>4-star hotel</span>
+                </div>
+                <div className="flex items-center gap-1 text-[12px] text-gray-500 mb-2">
+                  <SFIcon type="airplane" className="w-3.5 h-3.5" color="#6b7280" />
+                  <span>Flights included</span>
+                </div>
+                <div className="text-right">
+                  <span className="text-[11px] text-gray-400">from </span>
+                  <span className="text-[18px] font-bold text-[#D6006E]">£300</span>
+                  <span className="text-[11px] text-gray-500">pp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h2 className="text-[20px] font-bold text-gray-900 mb-1">Bigger level, bigger rewards</h2>
+            <p className="text-[13px] text-gray-500 mb-4">Sign up for free to our loyalty program</p>
+            
+            <div className="rounded-[24px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(40px)',
+              WebkitBackdropFilter: 'blur(40px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 24px rgba(0,0,0,0.08)'
+            }}>
+              <div className="p-4" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #333 100%)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-[20px] font-black text-white italic lastminute-sans">PRO</span>
+                  <span className="text-[12px] text-gray-300">PERKS + REWARDS + OFFERS</span>
+                </div>
+              </div>
+              
+              <div className="p-4 space-y-3">
+                <div className="flex items-start gap-3">
+                  <SFIcon type="percent" className="w-5 h-5 mt-0.5" color="#D6006E" />
+                  <div>
+                    <p className="text-[14px] font-semibold text-gray-900">Up to 15% off</p>
+                    <p className="text-[12px] text-gray-500">On holidays and experiences</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <SFIcon type="gift" className="w-5 h-5 mt-0.5" color="#D6006E" />
+                  <div>
+                    <p className="text-[14px] font-semibold text-gray-900">Extra perks & benefits</p>
+                    <p className="text-[12px] text-gray-500">Flight assistance and more</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <SFIcon type="chart.line.uptrend" className="w-5 h-5 mt-0.5" color="#D6006E" />
+                  <div>
+                    <p className="text-[14px] font-semibold text-gray-900">Grow in the program</p>
+                    <p className="text-[12px] text-gray-500">Complete trips to level up</p>
+                  </div>
+                </div>
+                
+                <button className="text-[14px] font-semibold text-[#D6006E] mt-2">Learn more about PRO</button>
+                
+                <button className="w-full py-3 rounded-xl text-[15px] font-semibold text-white mt-2" style={{ background: '#D6006E' }}>
+                  Sign up
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+
+      // Trips Tab Content
+      const TripsContent = () => (
+        <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
+          <div className="flex items-center justify-between mb-5">
+            <h1 className="text-[34px] font-bold tracking-tight text-gray-900">My trips</h1>
+            <button className="w-10 h-10 flex items-center justify-center rounded-full" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.8), 0 2px 8px rgba(0,0,0,0.08)'
+            }}>
+              <span className="text-[18px] font-semibold text-gray-600">?</span>
+            </button>
+          </div>
+
+          <div className="flex gap-2 mb-6 p-1.5 rounded-2xl" style={{
+            background: 'rgba(255,255,255,0.4)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.06)'
+          }}>
+            {['upcoming', 'past'].map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className="flex-1 py-3 px-6 rounded-xl text-[15px] font-semibold transition-all duration-300"
+                style={{
+                  background: activeFilter === filter ? 'rgba(255,255,255,0.9)' : 'transparent',
+                  color: activeFilter === filter ? '#D6006E' : '#666',
+                  boxShadow: activeFilter === filter ? '0 4px 16px rgba(214,0,110,0.15), inset 0 1px 1px rgba(255,255,255,1)' : 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          <div className="rounded-[28px] overflow-hidden mb-6" style={{
+            background: 'rgba(255,255,255,0.55)',
+            backdropFilter: 'blur(40px)',
+            WebkitBackdropFilter: 'blur(40px)',
+            boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)'
+          }}>
+            <div className="relative h-44 overflow-hidden">
+              <img src={mainTrip.image} alt={mainTrip.destination} className="w-full h-full object-cover" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 40%)' }} />
+              <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{
+                background: 'rgba(255,255,255,0.75)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.1)'
+              }}>
+                <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-[13px] font-semibold text-emerald-600">Confirmed</span>
+              </div>
+            </div>
+
+            <div className="p-5">
+              <h2 className="text-[24px] font-bold text-gray-900 mb-1">{mainTrip.destination}</h2>
+              <div className="flex items-center gap-4 text-gray-500 mb-4">
+                <div className="flex items-center gap-1.5">
+                  <SFIcon type="calendar" className="w-4 h-4" color="#6b7280" />
+                  <span className="text-[14px]">{mainTrip.dates}</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <SFIcon type="person" className="w-4 h-4" color="#6b7280" />
+                  <span className="text-[14px]">{mainTrip.travelers}</span>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mb-5">
+                {[
+                  { icon: 'list', label: 'Trip details' },
+                  { icon: 'plus', label: 'Extras' },
+                  { icon: 'check', label: 'Check-in' }
+                ].map((action, idx) => (
+                  <button key={idx} className="flex-1 flex flex-col items-center gap-2 py-3 rounded-2xl transition-all duration-200 active:scale-95" style={{
+                    background: 'rgba(255,255,255,0.7)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.05)'
+                  }}>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+                      {action.icon === 'list' && <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>}
+                      {action.icon === 'plus' && <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>}
+                      {action.icon === 'check' && <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>}
+                    </div>
+                    <span className="text-[12px] font-medium text-gray-700">{action.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="mb-4">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-[18px] font-bold text-gray-900">Your trip is in {mainTrip.daysUntil} days</span>
+                  <SFIcon type="airplane" className="w-4 h-4" color="#374151" />
+                </div>
+                <p className="text-[13px] text-gray-500 mb-2">Get ready with our travel checklist</p>
+                
+                <div className="h-2.5 rounded-full overflow-hidden mb-2" style={{ background: 'rgba(0,0,0,0.06)' }}>
+                  <div className="h-full rounded-full transition-all duration-500" style={{
+                    width: `${mainTrip.checklist.completed}%`,
+                    background: 'linear-gradient(90deg, #D6006E 0%, #FF4081 100%)',
+                    boxShadow: '0 0 12px rgba(214,0,110,0.4)'
+                  }} />
+                </div>
+                <p className="text-[12px] text-gray-500">
+                  <span className="text-emerald-600 font-semibold">{mainTrip.checklist.completed}% completed</span> – You're on track!
+                </p>
+              </div>
+
+              <div className="flex gap-3">
+                <div className="flex-1 p-3 rounded-2xl" style={{
+                  background: 'rgba(255,255,255,0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.04)'
+                }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)' }}>
+                      <SFIcon type="doc" className="w-4 h-4" color="white" />
+                    </div>
+                    <span className="text-[14px] font-bold text-gray-400">{mainTrip.documents.completed}/{mainTrip.documents.total}</span>
+                  </div>
+                  <h4 className="text-[14px] font-semibold text-gray-900 mb-0.5">Travel documents</h4>
+                  <p className="text-[11px] text-gray-500">Passport, visa, vaccination</p>
+                </div>
+
+                <div className="flex-1 p-3 rounded-2xl" style={{
+                  background: 'rgba(255,255,255,0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.04)'
+                }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h4 className="text-[14px] font-semibold text-gray-900 mb-0.5">Before you fly</h4>
+                  <p className="text-[11px] text-gray-500">Luggage, seats, insurance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="text-[20px] font-bold text-gray-900 mb-4">Other upcoming trips</h3>
+          
+          <div className="flex gap-4 overflow-x-auto pb-4">
+            {otherTrips.map((trip) => (
+              <div key={trip.id} className="flex-shrink-0 w-52 rounded-[24px] overflow-hidden" style={{
+                background: 'rgba(255,255,255,0.55)',
+                backdropFilter: 'blur(40px)',
+                WebkitBackdropFilter: 'blur(40px)',
+                boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 24px rgba(0,0,0,0.08)'
+              }}>
+                <div className="relative h-28 overflow-hidden">
+                  <img src={trip.image} alt={trip.destination} className="w-full h-full object-cover" />
+                  <div className="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 rounded-full" style={{
+                    background: 'rgba(255,255,255,0.75)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)'
+                  }}>
+                    <div className="w-3 h-3 rounded-full bg-emerald-500 flex items-center justify-center">
+                      <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-[10px] font-semibold text-emerald-600">Confirmed</span>
+                  </div>
+                </div>
+                <div className="p-3">
+                  <h4 className="text-[16px] font-bold text-gray-900 mb-1">{trip.destination}</h4>
+                  <div className="flex items-center gap-2 text-gray-500 mb-3">
+                    <div className="flex items-center gap-1">
+                      <SFIcon type="calendar" className="w-3 h-3" color="#6b7280" />
+                      <span className="text-[11px]">{trip.dates}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <SFIcon type="person" className="w-3 h-3" color="#6b7280" />
+                      <span className="text-[11px]">{trip.travelers}</span>
+                    </div>
+                  </div>
+                  <button className="w-full py-2 rounded-xl text-[13px] font-semibold transition-all duration-200 active:scale-95" style={{
+                    background: 'rgba(255,255,255,0.8)',
+                    color: '#333',
+                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.9), 0 2px 6px rgba(0,0,0,0.06)'
+                  }}>
+                    View trip
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+      // Account Tab Content
+      const AccountContent = () => (
+        <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
+          <div className="flex flex-col items-center mb-6">
+            <div className="w-20 h-20 rounded-full overflow-hidden mb-3 ring-4 ring-white/50" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Profile" className="w-full h-full object-cover" />
+            </div>
+            <h2 className="text-[20px] font-bold text-gray-900">Antonino Roundpants</h2>
+          </div>
+
+          <div className="rounded-[20px] p-4 mb-6 relative overflow-hidden" style={{
+            background: 'linear-gradient(135deg, #1a1a1a 0%, #333 100%)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+          }}>
+            <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full opacity-30" style={{ background: 'linear-gradient(135deg, #D6006E, #FF4081)' }} />
+            <div className="relative z-10">
+              <span className="text-[22px] font-black text-white italic lastminute-sans">PRO</span>
+              <p className="text-[14px] text-gray-300 mt-1">
+                Join our loyalty program <span className="font-bold text-white">for free</span> to enjoy exclusive travel perks.
+              </p>
+              <button className="mt-3 px-6 py-2 rounded-xl text-[14px] font-semibold text-white" style={{ background: '#D6006E' }}>
+                Sign up
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h3 className="text-[18px] font-bold text-gray-900 mb-3">Preferences</h3>
+            <div className="rounded-[20px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.06)'
+            }}>
+              {[
+                { icon: 'email', label: 'Email & password' },
+                { icon: 'person', label: 'Personal details' },
+                { icon: 'people', label: 'Travel buddies' },
+                { icon: 'globe', label: 'Language & country' }
+              ].map((item, idx, arr) => (
+                <button key={idx} className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors" style={{
+                  borderBottom: idx < arr.length - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none'
+                }}>
+                  <div className="flex items-center gap-3">
+                    <SFIcon type={item.icon} className="w-5 h-5" color="#4b5563" />
+                    <span className="text-[15px] text-gray-900">{item.label}</span>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h3 className="text-[18px] font-bold text-gray-900 mb-3">Support</h3>
+            <div className="rounded-[20px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.06)'
+            }}>
+              <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors">
+                <div className="flex items-center gap-3">
+                  <SFIcon type="help" className="w-5 h-5" color="#4b5563" />
+                  <span className="text-[15px] text-gray-900">Need help?</span>
+                </div>
+                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h3 className="text-[18px] font-bold text-gray-900 mb-3">Privacy & data</h3>
+            <div className="rounded-[20px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.06)'
+            }}>
+              {[
+                { icon: 'doc', label: 'General conditions' },
+                { icon: 'bell', label: 'Notifications' },
+                { icon: 'gear', label: 'Cookie settings' },
+                { icon: 'lock', label: 'Privacy policy' }
+              ].map((item, idx, arr) => (
+                <button key={idx} className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors" style={{
+                  borderBottom: idx < arr.length - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none'
+                }}>
+                  <div className="flex items-center gap-3">
+                    <SFIcon type={item.icon} className="w-5 h-5" color="#4b5563" />
+                    <span className="text-[15px] text-gray-900">{item.label}</span>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h3 className="text-[18px] font-bold text-gray-900 mb-3">Your app</h3>
+            <div className="rounded-[20px] overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.06)'
+            }}>
+              {[
+                { icon: 'widgets', label: 'Travel widgets' },
+                { icon: 'chat', label: 'Give us feedback' },
+                { icon: 'accessibility', label: 'Accessibility statement' }
+              ].map((item, idx, arr) => (
+                <button key={idx} className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors" style={{
+                  borderBottom: idx < arr.length - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none'
+                }}>
+                  <div className="flex items-center gap-3">
+                    <SFIcon type={item.icon} className="w-5 h-5" color="#4b5563" />
+                    <span className="text-[15px] text-gray-900">{item.label}</span>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="relative w-full h-full overflow-hidden" style={{
+          background: activeTab === 'explore' 
+            ? 'linear-gradient(180deg, #D6006E 0%, #D6006E 8%, #F0E6F4 20%, #FCE8EC 60%, #FFF8E8 100%)'
+            : 'linear-gradient(180deg, #E8F4FC 0%, #F0E6F4 30%, #FCE8EC 60%, #FFF8E8 100%)',
+          borderRadius: '54px',
+          display: 'flex',
+          flexDirection: 'column',
+          fontFamily: "'Ubuntu', -apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        }}>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-60" style={{ background: 'radial-gradient(circle, rgba(0,199,190,0.3) 0%, transparent 70%)' }} />
+            <div className="absolute top-1/3 -left-32 w-96 h-96 rounded-full opacity-50" style={{ background: 'radial-gradient(circle, rgba(255,45,85,0.2) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-20 right-0 w-72 h-72 rounded-full opacity-40" style={{ background: 'radial-gradient(circle, rgba(255,149,0,0.25) 0%, transparent 70%)' }} />
+          </div>
+
+          <div className="absolute top-0 left-0 right-0 z-50 flex justify-center pt-3">
+            <div className="w-[126px] h-[37px] bg-black rounded-full flex items-center justify-center" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.9)' }}>
+              <div className="w-3 h-3 rounded-full bg-[#1a1a1a] mr-8" style={{ boxShadow: 'inset 0 0 2px rgba(50,50,80,0.8)' }} />
+            </div>
+          </div>
+
+          <div className="relative z-40 flex items-center justify-between px-6 pt-4 pb-2" style={{ paddingTop: '55px' }}>
+            <span className={`text-[17px] font-semibold ${activeTab === 'explore' ? 'text-white' : 'text-gray-900'}`}>9:41</span>
+            <div className="flex items-center gap-[6px]">
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+                <rect x="0" y="9" width="3" height="5" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
+                <rect x="5" y="6" width="3" height="8" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
+                <rect x="10" y="3" width="3" height="11" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
+                <rect x="15" y="0" width="3" height="14" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
+              </svg>
+              <svg width="17" height="13" viewBox="0 0 17 13" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}>
+                <path d="M8.5 2.5C10.9 2.5 13.1 3.4 14.7 5L16 3.7C14 1.7 11.4 0.5 8.5 0.5C5.6 0.5 3 1.7 1 3.7L2.3 5C3.9 3.4 6.1 2.5 8.5 2.5ZM4.6 7.3L5.9 8.6C6.6 7.9 7.5 7.5 8.5 7.5C9.5 7.5 10.4 7.9 11.1 8.6L12.4 7.3C11.4 6.3 10 5.7 8.5 5.7C7 5.7 5.6 6.3 4.6 7.3ZM8.5 10C7.9 10 7.5 10.4 7.5 11C7.5 11.6 7.9 12 8.5 12C9.1 12 9.5 11.6 9.5 11C9.5 10.4 9.1 10 8.5 10Z"/>
+              </svg>
+              <div className="flex items-center">
+                <div className="relative w-[27px] h-[13px] rounded-[4px] border-[1.5px]" style={{ borderColor: activeTab === 'explore' ? 'white' : '#1d1d1f' }}>
+                  <div className="absolute top-[2px] left-[2px] bottom-[2px] rounded-[2px]" style={{ width: '80%', background: activeTab === 'explore' ? 'white' : '#1d1d1f' }} />
+                </div>
+                <div className="w-[2px] h-[6px] rounded-r-[2px] ml-[1px]" style={{ background: activeTab === 'explore' ? 'white' : '#1d1d1f' }} />
+              </div>
+            </div>
+          </div>
+
+          {activeTab === 'explore' && <ExploreContent />}
+          {activeTab === 'trips' && <TripsContent />}
+          {activeTab === 'account' && <AccountContent />}
+          {activeTab !== 'explore' && activeTab !== 'trips' && activeTab !== 'account' && (
+            <div className="flex-1 flex items-center justify-center">
+              <p className="text-gray-400 text-[16px]">Coming soon...</p>
+            </div>
+          )}
+
+          <div className="absolute bottom-0 left-0 right-0 z-50" style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.5) 0%, transparent 100%)', paddingTop: '20px' }}>
+            <div className="mx-4 mb-2 rounded-[26px] px-3 py-2" style={{
+              background: 'rgba(255,255,255,0.85)',
+              backdropFilter: 'blur(40px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+              boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)',
+              border: '1px solid rgba(255,255,255,0.6)'
+            }}>
+              <div className="flex items-center justify-around">
+                {[
+                  { id: 'explore', label: 'Explore', icon: 'search' },
+                  { id: 'favourites', label: 'Favourites', icon: 'heart' },
+                  { id: 'deals', label: 'Deals', icon: 'tag' },
+                  { id: 'trips', label: 'My trips', icon: 'plane' },
+                  { id: 'account', label: 'Account', icon: 'user' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition-all duration-300"
+                    style={{ background: activeTab === tab.id ? 'rgba(214,0,110,0.12)' : 'transparent' }}
+                  >
+                    <div className="relative">
+                      {tab.icon === 'search' && (
+                        <svg className={`w-5 h-5 transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <circle cx="11" cy="11" r="8" />
+                          <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                      )}
+                      {tab.icon === 'heart' && (
+                        <svg className={`w-5 h-5 transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`} fill={activeTab === tab.id ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg>
+                      )}
+                      {tab.icon === 'tag' && (
+                        <svg className={`w-5 h-5 transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
+                          <circle cx="7" cy="7" r="1" fill="currentColor" />
+                        </svg>
+                      )}
+                      {tab.icon === 'plane' && (
+                        <svg className={`w-5 h-5 transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`} fill={activeTab === tab.id ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                        </svg>
+                      )}
+                      {tab.icon === 'user' && (
+                        <svg className={`w-5 h-5 transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                      )}
+                    </div>
+                    <span className={`text-[9px] font-medium transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`}>
+                      {tab.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex justify-center py-2">
+              <div className="w-32 h-1 bg-black rounded-full opacity-30" />
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+
+</body>
+</html>
