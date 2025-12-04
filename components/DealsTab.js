@@ -255,7 +255,7 @@ function DealsTab() {
       </div>
 
       {/* Sort and Filters Button */}
-      <div className="absolute bottom-20 left-0 right-0 flex justify-center pointer-events-none">
+      <div className="absolute bottom-28 left-0 right-0 flex justify-center pointer-events-none">
         <button className="flex items-center gap-3 px-6 py-3 rounded-full pointer-events-auto" style={{
           background: '#1a1a1a',
           boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
