@@ -30,6 +30,7 @@
   <script type="text/babel" src="components/SFIcon.js"></script>
   <script type="text/babel" src="components/ExploreTab.js"></script>
   <script type="text/babel" src="components/FavouritesTab.js"></script>
+  <script type="text/babel" src="components/DealsTab.js"></script>
   <script type="text/babel" src="components/TripsTab.js"></script>
   <script type="text/babel" src="components/AccountTab.js"></script>
 
@@ -78,6 +79,8 @@
         <div className="relative w-full h-full overflow-hidden" style={{
           background: activeTab === 'explore'
             ? 'linear-gradient(180deg, #D6006E 20%, #FFFFFF 20%)'
+            : activeTab === 'deals'
+            ? '#F5F5F5'
             : 'linear-gradient(180deg, #E8F4FC 0%, #F0E6F4 30%, #FCE8EC 60%, #FFF8E8 100%)',
           borderRadius: '54px',
           display: 'flex',
@@ -97,31 +100,32 @@
           </div>
 
           <div className="relative z-40 flex items-center justify-between px-6 pt-4 pb-2" style={{ paddingTop: '55px' }}>
-            <span className={`text-[17px] font-semibold ${activeTab === 'explore' ? 'text-white' : 'text-gray-900'}`}>9:41</span>
+            <span className={`text-[17px] font-semibold ${(activeTab === 'explore' || activeTab === 'deals') ? 'text-white' : 'text-gray-900'}`}>9:41</span>
             <div className="flex items-center gap-[6px]">
               <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
-                <rect x="0" y="9" width="3" height="5" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
-                <rect x="5" y="6" width="3" height="8" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
-                <rect x="10" y="3" width="3" height="11" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
-                <rect x="15" y="0" width="3" height="14" rx="1" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}/>
+                <rect x="0" y="9" width="3" height="5" rx="1" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}/>
+                <rect x="5" y="6" width="3" height="8" rx="1" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}/>
+                <rect x="10" y="3" width="3" height="11" rx="1" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}/>
+                <rect x="15" y="0" width="3" height="14" rx="1" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}/>
               </svg>
-              <svg width="17" height="13" viewBox="0 0 17 13" fill={activeTab === 'explore' ? 'white' : '#1d1d1f'}>
+              <svg width="17" height="13" viewBox="0 0 17 13" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}>
                 <path d="M8.5 2.5C10.9 2.5 13.1 3.4 14.7 5L16 3.7C14 1.7 11.4 0.5 8.5 0.5C5.6 0.5 3 1.7 1 3.7L2.3 5C3.9 3.4 6.1 2.5 8.5 2.5ZM4.6 7.3L5.9 8.6C6.6 7.9 7.5 7.5 8.5 7.5C9.5 7.5 10.4 7.9 11.1 8.6L12.4 7.3C11.4 6.3 10 5.7 8.5 5.7C7 5.7 5.6 6.3 4.6 7.3ZM8.5 10C7.9 10 7.5 10.4 7.5 11C7.5 11.6 7.9 12 8.5 12C9.1 12 9.5 11.6 9.5 11C9.5 10.4 9.1 10 8.5 10Z"/>
               </svg>
               <div className="flex items-center">
-                <div className="relative w-[27px] h-[13px] rounded-[4px] border-[1.5px]" style={{ borderColor: activeTab === 'explore' ? 'white' : '#1d1d1f' }}>
-                  <div className="absolute top-[2px] left-[2px] bottom-[2px] rounded-[2px]" style={{ width: '80%', background: activeTab === 'explore' ? 'white' : '#1d1d1f' }} />
+                <div className="relative w-[27px] h-[13px] rounded-[4px] border-[1.5px]" style={{ borderColor: (activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f' }}>
+                  <div className="absolute top-[2px] left-[2px] bottom-[2px] rounded-[2px]" style={{ width: '80%', background: (activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f' }} />
                 </div>
-                <div className="w-[2px] h-[6px] rounded-r-[2px] ml-[1px]" style={{ background: activeTab === 'explore' ? 'white' : '#1d1d1f' }} />
+                <div className="w-[2px] h-[6px] rounded-r-[2px] ml-[1px]" style={{ background: (activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f' }} />
               </div>
             </div>
           </div>
 
           {activeTab === 'explore' && <ExploreContent searchType={searchType} setSearchType={setSearchType} holidayVibe={holidayVibe} setHolidayVibe={setHolidayVibe} />}
           {activeTab === 'favourites' && <FavouritesTab />}
+          {activeTab === 'deals' && <DealsTab />}
           {activeTab === 'trips' && <TripsContent trips={trips} activeFilter={activeFilter} setActiveFilter={setActiveFilter} />}
           {activeTab === 'account' && <AccountContent />}
-          {activeTab !== 'explore' && activeTab !== 'favourites' && activeTab !== 'trips' && activeTab !== 'account' && (
+          {activeTab !== 'explore' && activeTab !== 'favourites' && activeTab !== 'deals' && activeTab !== 'trips' && activeTab !== 'account' && (
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-400 text-[16px]">Coming soon...</p>
             </div>
