@@ -74,9 +74,9 @@ function DealsTab() {
             background: 'rgba(255,255,255,0.95)',
             boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
           }}>
-            <SFIcon type="airplane" className="w-4 h-4" color="#666" />
+            <SFIcon type="airplane.fill" className="w-4 h-4" color="#666" />
             <div className="flex-1 text-left">
-              <span className="text-[14px] font-semibold text-gray-900">From: London (LHR)</span>
+              <span className="text-[14px] text-gray-900">From: London (LHR)</span>
             </div>
           </button>
 
@@ -86,7 +86,7 @@ function DealsTab() {
             boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
           }}>
             <SFIcon type="calendar" className="w-4 h-4" color="#666" />
-            <span className="text-[14px] font-semibold text-gray-900 whitespace-nowrap">4-6 nights, Any...</span>
+            <span className="text-[14px] text-gray-900 whitespace-nowrap">4-6 nights, Any...</span>
           </button>
         </div>
       </div>
