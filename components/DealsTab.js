@@ -43,7 +43,7 @@ function DealsTab() {
   ];
 
   return (
-    <div className="h-full flex flex-col" style={{ marginTop: '-85px' }}>
+    <div className="h-full flex flex-col" style={{ marginTop: '-90px' }}>
       {/* Header with gradient background and logo */}
       <div className="relative px-6 pb-6" style={{
         background: 'linear-gradient(135deg, #E91E63 0%, #FF6B35 100%)',
@@ -266,7 +266,7 @@ function DealsTab() {
               <line x1="4" y1="12" x2="12" y2="12" />
               <line x1="4" y1="18" x2="20" y2="18" />
             </svg>
-            <span className="text-[15px] font-semibold text-white">Sort</span>
+            <span className="text-[15px] text-white">Sort</span>
           </div>
           <div className="w-px h-4 bg-gray-600" />
           <div className="flex items-center gap-2">
@@ -276,7 +276,7 @@ function DealsTab() {
               <line x1="14" y1="6" x2="20" y2="6" />
               <line x1="14" y1="18" x2="20" y2="18" />
             </svg>
-            <span className="text-[15px] font-semibold text-white">Filters</span>
+            <span className="text-[15px] text-white">Filters</span>
           </div>
         </button>
       </div>
