@@ -2,7 +2,7 @@
 const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe }) => (
   <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
     <div className="flex items-center justify-center mb-4">
-      <span className="text-[20px] font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>lastminute.com</span>
+      <span className="text-[26px] font-bold text-white" style={{  }}>lastminute.com</span>
     </div>
 
     <div className="rounded-2xl p-1 mb-4" style={{
@@ -52,7 +52,7 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
         <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
         <p className="text-[13px] text-gray-500">13–18 Feb · 2 travellers · 1 room</p>
       </div>
-      <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#D6006E' }}>
+      <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#f2007d' }}>
         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
