@@ -28,9 +28,14 @@ function FavouritesTab() {
       id: 5,
       name: 'Santiago de Compostela',
       hotels: 1,
-      image: 'https://images.unsplash.com/photo-1604598666431-7219c2eaa5de?w=800&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&auto=format&fit=crop'
     }
   ];
+
+  const handleDestinationClick = (destination) => {
+    console.log('Clicked destination:', destination.name);
+    // Navigate to destination details or hotel listings
+  };
 
   return (
     <div className="h-full flex flex-col">
@@ -49,10 +54,15 @@ function FavouritesTab() {
         {/* Grid of Destination Cards */}
         <div className="grid grid-cols-2 gap-4">
           {favouriteDestinations.map((destination) => (
-            <div key={destination.id} className="flex flex-col">
+            <button
+              key={destination.id}
+              onClick={() => handleDestinationClick(destination)}
+              className="flex flex-col text-left transition-transform duration-200 active:scale-95"
+              style={{ WebkitTapHighlightColor: 'transparent' }}
+            >
               {/* Card Image */}
               <div
-                className="w-full aspect-[1.4/1] rounded-[24px] overflow-hidden mb-3"
+                className="w-full aspect-[1.4/1] rounded-[24px] overflow-hidden mb-3 transition-shadow duration-200"
                 style={{
                   background: `url(${destination.image}) center/cover no-repeat`,
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
@@ -80,7 +90,7 @@ function FavouritesTab() {
                   {destination.hotels} {destination.hotels === 1 ? 'hotel' : 'hotels'}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
