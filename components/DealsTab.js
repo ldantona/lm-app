@@ -60,8 +60,15 @@ function DealsTab() {
           />
         </div>
 
+        {/* Title over the banner */}
+        <div className="relative z-10 flex justify-center" style={{ marginTop: '10px', marginBottom: '20px' }}>
+          <h1 className="text-[28px] font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+            Last Minute <span className="lastminute-sans">DEALS</span>
+          </h1>
+        </div>
+
         {/* Search Filters - positioned above logo */}
-        <div className="relative z-10 flex gap-2" style={{ marginTop: '60px' }}>
+        <div className="relative z-10 flex gap-2">
           {/* From Location */}
           <button className="flex-1 flex items-center gap-2 px-4 py-3 rounded-2xl" style={{
             background: 'rgba(255,255,255,0.95)',
