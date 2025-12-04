@@ -43,11 +43,12 @@ function DealsTab() {
   ];
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col" style={{ marginTop: '-85px' }}>
       {/* Header with gradient background and logo */}
       <div className="relative px-6 pb-6" style={{
         background: 'linear-gradient(135deg, #E91E63 0%, #FF6B35 100%)',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        paddingTop: '85px'
       }}>
         {/* Logo covering entire banner */}
         <div className="absolute inset-0">
