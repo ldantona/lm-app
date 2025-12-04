@@ -74,7 +74,7 @@ function DealsTab() {
             background: 'rgba(255,255,255,0.95)',
             boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
           }}>
-            <SFIcon type="airplane.departure" className="w-4 h-4" color="#666" />
+            <SFIcon type="airplane" className="w-4 h-4" color="#666" />
             <div className="flex-1 text-left">
               <span className="text-[14px] font-semibold text-gray-900">From: London (LHR)</span>
             </div>
