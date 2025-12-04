@@ -62,7 +62,7 @@ function FavouritesTab() {
             >
               {/* Card Image */}
               <div
-                className="w-full aspect-[1.4/1] rounded-[24px] overflow-hidden mb-3 transition-shadow duration-200"
+                className="w-full aspect-[1.4/1] rounded-[24px] overflow-hidden mb-2 transition-shadow duration-200"
                 style={{
                   background: `url(${destination.image}) center/cover no-repeat`,
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
@@ -72,7 +72,7 @@ function FavouritesTab() {
               {/* Card Info */}
               <div className="px-1">
                 <h3
-                  className="text-[17px] font-bold mb-1"
+                  className="text-[17px] font-bold mb-0.5"
                   style={{
                     fontFamily: 'Ubuntu, sans-serif',
                     color: '#000'
