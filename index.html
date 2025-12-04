@@ -76,7 +76,7 @@
       return (
         <div className="relative w-full h-full overflow-hidden" style={{
           background: activeTab === 'explore'
-            ? 'linear-gradient(180deg, #D6006E 0%, #D6006E 8%, #F0E6F4 20%, #FCE8EC 60%, #FFF8E8 100%)'
+            ? 'linear-gradient(180deg, #D6006E 20%, #FFFFFF 20%)'
             : 'linear-gradient(180deg, #E8F4FC 0%, #F0E6F4 30%, #FCE8EC 60%, #FFF8E8 100%)',
           borderRadius: '54px',
           display: 'flex',
@@ -145,7 +145,7 @@
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition-all duration-300"
-                    style={{ background: activeTab === tab.id ? 'rgba(214,0,110,0.12)' : 'transparent' }}
+                    style={{ background: activeTab === tab.id ? 'transparent' : 'transparent' }}
                   >
                     <div className="relative">
                       {tab.icon === 'search' && (
@@ -177,7 +177,7 @@
                         </svg>
                       )}
                     </div>
-                    <span className={`text-[9px] font-medium transition-colors ${activeTab === tab.id ? 'text-[#D6006E]' : 'text-gray-400'}`}>
+                    <span className={`text-[9px] transition-colors ${activeTab === tab.id ? 'font-bold text-[#D6006E]' : 'font-medium text-gray-400'}`}>
                       {tab.label}
                     </span>
                   </button>
