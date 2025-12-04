@@ -29,6 +29,7 @@
 
   <script type="text/babel" src="components/SFIcon.js"></script>
   <script type="text/babel" src="components/ExploreTab.js"></script>
+  <script type="text/babel" src="components/FavouritesTab.js"></script>
   <script type="text/babel" src="components/TripsTab.js"></script>
   <script type="text/babel" src="components/AccountTab.js"></script>
 
@@ -117,9 +118,10 @@
           </div>
 
           {activeTab === 'explore' && <ExploreContent searchType={searchType} setSearchType={setSearchType} holidayVibe={holidayVibe} setHolidayVibe={setHolidayVibe} />}
+          {activeTab === 'favourites' && <FavouritesTab />}
           {activeTab === 'trips' && <TripsContent trips={trips} activeFilter={activeFilter} setActiveFilter={setActiveFilter} />}
           {activeTab === 'account' && <AccountContent />}
-          {activeTab !== 'explore' && activeTab !== 'trips' && activeTab !== 'account' && (
+          {activeTab !== 'explore' && activeTab !== 'favourites' && activeTab !== 'trips' && activeTab !== 'account' && (
             <div className="flex-1 flex items-center justify-center">
               <p className="text-gray-400 text-[16px]">Coming soon...</p>
             </div>
