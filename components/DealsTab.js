@@ -45,7 +45,7 @@ function DealsTab() {
   return (
     <div className="h-full flex flex-col">
       {/* Header with gradient background and logo */}
-      <div className="relative px-6 pt-6 pb-6" style={{
+      <div className="relative px-6 pb-6" style={{
         background: 'linear-gradient(135deg, #E91E63 0%, #FF6B35 100%)',
         overflow: 'hidden'
       }}>
@@ -60,7 +60,7 @@ function DealsTab() {
         </div>
 
         {/* Search Filters - positioned above logo */}
-        <div className="relative z-10 flex gap-2" style={{ marginTop: '40px' }}>
+        <div className="relative z-10 flex gap-2" style={{ marginTop: '60px' }}>
           {/* From Location */}
           <button className="flex-1 flex items-center gap-2 px-4 py-3 rounded-2xl" style={{
             background: 'rgba(255,255,255,0.95)',
