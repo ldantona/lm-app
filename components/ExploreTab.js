@@ -14,7 +14,7 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
       <div className="flex">
         {[
           { id: 'flights', label: 'Flights', icon: 'airplane' },
-          { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.fill' },
+          { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.fill', icon2: 'building.2' },
           { id: 'hotels', label: 'Hotels', icon: 'building.2' }
         ].map((type) => (
           <button
@@ -27,7 +27,15 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
               boxShadow: searchType === type.id ? '0 2px 8px rgba(0,0,0,0.1)' : 'none'
             }}
           >
-            <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+            {type.icon2 ? (
+              <div className="flex items-center gap-1">
+                <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+                <span className="text-[10px] font-bold">+</span>
+                <SFIcon type={type.icon2} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+              </div>
+            ) : (
+              <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+            )}
             <span>{type.label}</span>
           </button>
         ))}
