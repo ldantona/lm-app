@@ -61,7 +61,7 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
     </div>
 
     <div className="mb-6">
-      <h2 className="text-[22px] font-bold text-gray-900 mb-1">Last Minute <span className="lastminute-sans" style={{ textDecoration: 'underline', textDecorationStyle: 'wavy', textDecorationColor: '#D6006E' }}>DEALS</span></h2>
+      <h2 className="text-[22px] font-bold text-gray-900 mb-1">Last Minute <span className="lastminute-sans">DEALS</span></h2>
       <p className="text-[14px] text-gray-500 mb-4">Only here, only for a short time</p>
 
       <div className="rounded-[24px] overflow-hidden" style={{
