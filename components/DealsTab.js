@@ -48,17 +48,14 @@ function DealsTab() {
       <div className="relative px-6 pt-6 pb-6" style={{
         background: 'linear-gradient(135deg, #E91E63 0%, #FF6B35 100%)',
       }}>
-        {/* Title */}
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{
-            background: 'rgba(255,255,255,0.3)',
-            backdropFilter: 'blur(10px)'
-          }}>
-            <SFIcon type="timer" className="w-5 h-5" color="white" />
-          </div>
-          <h1 className="text-[28px] font-bold text-white">
-            Last Minute <span className="lastminute-sans">DEALS</span>
-          </h1>
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="images/lastMinuteDealsLogo.png"
+            alt="Last Minute Deals"
+            className="h-12"
+            style={{ objectFit: 'contain' }}
+          />
         </div>
 
         {/* Search Filters */}
