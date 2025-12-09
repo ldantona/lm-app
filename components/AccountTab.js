@@ -3,9 +3,9 @@ const AccountContent = () => (
   <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
     <div className="flex flex-col items-center mb-6">
       <div className="w-20 h-20 rounded-full overflow-hidden mb-3 ring-4 ring-white/50" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Profile" className="w-full h-full object-cover" />
+        <img src="/images/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
       </div>
-      <h2 className="text-[20px] font-bold text-gray-900">Antonino Roundpants</h2>
+      <h2 className="text-[20px] font-bold text-gray-900">SpongeBob Roundpants</h2>
     </div>
 
     <div className="rounded-[20px] p-4 mb-6 relative overflow-hidden" style={{

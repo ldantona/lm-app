@@ -2,7 +2,7 @@
 const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe }) => (
   <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
     <div className="flex items-center justify-center mb-4">
-      <span className="text-[20px] font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>lastminute.com</span>
+      <span className="text-[26px] font-bold text-white" style={{  }}>lastminute.com</span>
     </div>
 
     <div className="rounded-2xl p-1 mb-4" style={{
@@ -52,7 +52,7 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
         <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
         <p className="text-[13px] text-gray-500">13–18 Feb · 2 travellers · 1 room</p>
       </div>
-      <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#D6006E' }}>
+      <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#f2007d' }}>
         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
@@ -61,7 +61,21 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
     </div>
 
     <div className="mb-6">
-      <h2 className="text-[22px] font-bold text-gray-900 mb-1">Last Minute <span className="lastminute-sans">DEALS</span></h2>
+      <div className="relative inline-block mb-1">
+        <h2 className="text-[22px] font-bold text-gray-900">Last Minute <span className="lastminute-sans">DEALS</span></h2>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' preserveAspectRatio='none' viewBox='-23.5 0 1600 200'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' x2='100%25' y1='0%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23f2007d' /%3E%3Cstop offset='100%25' stop-color='%23ffb511' /%3E%3C/linearGradient%3E%3Cfilter id='t'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.01 0.1' numOctaves='2'  result='tb' /%3E%3CfeDisplacementMap in2='tb' in='SourceGraphic' scale='2' xChannelSelector='R' yChannelSelector='G' /%3E%3C/filter%3E%3C/defs%3E%3Cpath fill='url(%23a)' d='M14 57.6q761.8-18 1523.6 0c20 2 20 22 0 25.2q-761.8-18-1523.6 0c-20 2-20-22 0-25.2Z' filter='url(%23t)' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"
+          alt=""
+          className="absolute"
+          style={{
+            width: '80px',
+            height: '28px',
+            right: '-5px',
+            top: '24px',
+            pointerEvents: 'none'
+          }}
+        />
+      </div>
       <p className="text-[14px] text-gray-500 mb-4">Only here, only for a short time</p>
 
       <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollSnapType: 'x mandatory', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
