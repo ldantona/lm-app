@@ -101,23 +101,23 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
                 <SFIcon type="timer" className="w-4 h-4" color="#374151" />
                 <span className="text-[12px] font-semibold text-gray-700">Ends in {deal.timer}</span>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }}>
-                <h3 className="text-[18px] font-bold text-white mb-1">{deal.city}</h3>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1">
+              <div className="absolute bottom-0 left-0 right-0 p-3" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }}>
+                <h3 className="text-[18px] font-bold text-white mb-1.5">{deal.city}</h3>
+                <div className="flex items-center justify-between gap-2" style={{ flexWrap: 'nowrap' }}>
+                  <div className="flex items-center gap-2 flex-shrink-1 min-w-0">
+                    <div className="flex items-center gap-1 flex-shrink-0">
                       <SFIcon type="airplane" className="w-3.5 h-3.5" color="rgba(255,255,255,0.8)" />
-                      <span className="text-[12px] text-white/80">Flight + Hotel</span>
+                      <span className="text-[11px] text-white/80 whitespace-nowrap">Flight + Hotel</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 flex-shrink-0">
                       <SFIcon type="calendar" className="w-3.5 h-3.5" color="rgba(255,255,255,0.8)" />
-                      <span className="text-[12px] text-white/80">{deal.nights}</span>
+                      <span className="text-[11px] text-white/80 whitespace-nowrap">{deal.nights}</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-[11px] text-white/70">from </span>
-                    <span className="text-[18px] font-bold text-white">{deal.price}</span>
-                    <span className="text-[11px] text-white/70"> pp</span>
+                  <div className="text-right flex-shrink-0">
+                    <span className="text-[10px] text-white/70">from </span>
+                    <span className="text-[17px] font-bold text-white">{deal.price}</span>
+                    <span className="text-[10px] text-white/70"> pp</span>
                   </div>
                 </div>
               </div>
