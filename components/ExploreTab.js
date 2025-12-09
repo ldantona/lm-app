@@ -14,8 +14,8 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
       <div className="p-1">
         <div className="flex">
           {[
-            { id: 'flights', label: 'Flights', icon: 'airplane.fill' },
-            { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.fill', icon2: 'building.2' },
+            { id: 'flights', label: 'Flights', icon: 'airplane.up.right' },
+            { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.up.right', icon2: 'building.2' },
             { id: 'hotels', label: 'Hotels', icon: 'building.2' }
           ].map((type) => (
             <button
