@@ -43,6 +43,8 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
         </div>
       </div>
 
+      <div className="mx-4 border-t border-gray-200" style={{ opacity: 0.4 }}></div>
+
       <div className="flex items-center gap-3 p-4">
         <div className="flex-1">
           <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
