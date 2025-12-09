@@ -3,7 +3,7 @@ const AccountContent = () => (
   <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
     <div className="flex flex-col items-center mb-6">
       <div className="w-20 h-20 rounded-full overflow-hidden mb-3 ring-4 ring-white/50" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
-        <img src="/images/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
+        <img src="images/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
       </div>
       <h2 className="text-[20px] font-bold text-gray-900">SpongeBob Roundpants</h2>
     </div>
