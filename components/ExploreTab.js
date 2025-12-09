@@ -5,59 +5,58 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
       <span className="text-[26px] font-bold text-white" style={{  }}>lastminute.com</span>
     </div>
 
-    <div className="rounded-2xl p-1 mb-4" style={{
+    <div className="rounded-2xl mb-6" style={{
       background: 'rgba(255,255,255,0.7)',
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)',
       boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.06)'
     }}>
-      <div className="flex">
-        {[
-          { id: 'flights', label: 'Flights', icon: 'airplane.fill' },
-          { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.fill', icon2: 'building.2' },
-          { id: 'hotels', label: 'Hotels', icon: 'building.2' }
-        ].map((type) => (
-          <button
-            key={type.id}
-            onClick={() => setSearchType(type.id)}
-            className="flex-1 py-2.5 px-2 rounded-xl text-[12px] font-semibold transition-all duration-300 flex flex-col items-center gap-1"
-            style={{
-              background: searchType === type.id ? 'white' : 'transparent',
-              color: searchType === type.id ? '#D6006E' : '#666',
-              boxShadow: searchType === type.id ? '0 2px 8px rgba(0,0,0,0.1)' : 'none'
-            }}
-          >
-            {type.icon2 ? (
-              <div className="flex items-center gap-1">
+      <div className="p-1">
+        <div className="flex">
+          {[
+            { id: 'flights', label: 'Flights', icon: 'airplane.up.right' },
+            { id: 'flight-hotel', label: 'Flight + Hotel', icon: 'airplane.up.right', icon2: 'building.2' },
+            { id: 'hotels', label: 'Hotels', icon: 'building.2' }
+          ].map((type) => (
+            <button
+              key={type.id}
+              onClick={() => setSearchType(type.id)}
+              className="flex-1 py-2.5 px-2 rounded-xl text-[12px] font-semibold transition-all duration-300 flex flex-col items-center gap-1"
+              style={{
+                background: searchType === type.id ? 'white' : 'transparent',
+                color: searchType === type.id ? '#D6006E' : '#666',
+                boxShadow: searchType === type.id ? '0 2px 8px rgba(0,0,0,0.1)' : 'none'
+              }}
+            >
+              {type.icon2 ? (
+                <div className="flex items-center gap-1">
+                  <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+                  <span className="text-[10px] font-bold">+</span>
+                  <SFIcon type={type.icon2} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
+                </div>
+              ) : (
                 <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
-                <span className="text-[10px] font-bold">+</span>
-                <SFIcon type={type.icon2} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
-              </div>
-            ) : (
-              <SFIcon type={type.icon} className="w-5 h-5" color={searchType === type.id ? '#D6006E' : '#666'} />
-            )}
-            <span>{type.label}</span>
-          </button>
-        ))}
+              )}
+              <span>{type.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
 
-    <div className="flex items-center gap-3 p-4 rounded-2xl mb-6" style={{
-      background: 'rgba(255,255,255,0.7)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.06)'
-    }}>
-      <div className="flex-1">
-        <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
-        <p className="text-[13px] text-gray-500">13–18 Feb · 2 travellers · 1 room</p>
+      <div className="mx-4 border-t border-gray-200" style={{ opacity: 0.4 }}></div>
+
+      <div className="flex items-center gap-3 p-4">
+        <div className="flex-1">
+          <p className="text-[15px] font-semibold text-gray-900">London – Barcelona</p>
+          <p className="text-[13px] text-gray-500">13–18 Feb · 2 travellers · 1 room</p>
+        </div>
+        <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#f2007d' }}>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+        </button>
       </div>
-      <button className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: '#f2007d' }}>
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8" />
-          <path d="M21 21l-4.35-4.35" />
-        </svg>
-      </button>
     </div>
 
     <div className="mb-6">
