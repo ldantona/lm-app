@@ -69,7 +69,7 @@ const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe
           className="absolute"
           style={{
             width: '80px',
-            height: '8px',
+            height: '28px',
             right: '-5px',
             top: '24px',
             pointerEvents: 'none'
