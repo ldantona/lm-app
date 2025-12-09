@@ -38,7 +38,7 @@
     const { useState } = React;
 
     const App = () => {
-      const [activeTab, setActiveTab] = useState('explore');
+      const [activeTab, setActiveTab] = useState('account');
       const [activeFilter, setActiveFilter] = useState('upcoming');
       const [searchType, setSearchType] = useState('flight-hotel');
       const [holidayVibe, setHolidayVibe] = useState('anywhere');
@@ -99,8 +99,8 @@
             </div>
           </div>
 
-          <div className="relative z-40 flex items-center justify-between px-6 pt-4 pb-2" style={{ paddingTop: '55px' }}>
-            <span className={`text-[17px] font-semibold ${(activeTab === 'explore' || activeTab === 'deals') ? 'text-white' : 'text-gray-900'}`}>9:41</span>
+          <div className="relative z-40 flex items-center justify-between px-6 pt-4 pb-2" style={{ paddingTop: '20px' }}>
+            <span className={`text-[17px] ${(activeTab === 'explore' || activeTab === 'deals') ? 'text-white' : 'text-gray-900'}`}>9:41</span>
             <div className="flex items-center gap-[6px]">
               <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
                 <rect x="0" y="9" width="3" height="5" rx="1" fill={(activeTab === 'explore' || activeTab === 'deals') ? 'white' : '#1d1d1f'}/>

@@ -1,6 +1,6 @@
 // Explore Tab Content
 const ExploreContent = ({ searchType, setSearchType, holidayVibe, setHolidayVibe }) => (
-  <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px' }}>
+  <div className="relative z-10 px-5 pt-1 flex-1 overflow-y-auto" style={{ paddingBottom: '120px', paddingTop: '20px' }}>
     <div className="flex items-center justify-center mb-4">
       <span className="text-[26px] font-bold text-white" style={{  }}>lastminute.com</span>
     </div>
